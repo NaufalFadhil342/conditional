@@ -1,25 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const planets = [
+    { name: 'Mars', isGasPlanet: false },
+    { name: 'Earth', isGasPlanet: false },
+    { name: 'Jupiter', isGasPlanet: true },
+    { name: 'Venus', isGasPlanet: false },
+    { name: 'Neptune', isGasPlanet: true },
+    { name: 'Uranus', isGasPlanet: true },
+  ];
+
+  return <div className="App">{planets.map((planet) => planet.isGasPlanet && <h1>{planet.name}</h1>)}</div>;
 }
 
 export default App;
